@@ -1,7 +1,7 @@
-import ReactDOM from "react-dom";
+import ReactDOM from 'react-dom';
 import styles from './style.css';
 import mouseAnimation from './visualizations/mouse';
-import Nav from  './components/nav';
+import Nav from './components/nav';
 import Link from './components/link';
 
 const navItems = ['Item', 'Item', 'Item', 'Item', 'Item'];
@@ -11,11 +11,9 @@ const App = () => {
     <div className={styles.bg}>
       <Nav>
         {
-          navItems.map((item, index) => {
+          navItems.map((item) => {
             return (
-              <div key={index}>
-                <Link title={item} />
-              </div>
+              <Link title={item}/>
             )
           })
         }
@@ -24,5 +22,5 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById("main"));
+ReactDOM.render(<App/>, document.getElementById('main'));
 mouseAnimation();

@@ -2,9 +2,24 @@
     position: absolute;
     width: 20%;
     height: 100%;
-    background-color: black;
+    background-color: #333131;
+    top: 0;
+    left: 0;
+}
+
+.nav-item--link {
+    background-color: #333131;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
 }
 
 .nav-item--link:hover {
-    background-color: white;
+    background-color: #4d4a4a;
+}
+
+.nav-close-btn {
+    position: absolute;
+    right: 0;
+    font-size: 30px;
 }
