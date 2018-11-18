@@ -1,9 +1,51 @@
 @import "components/nav/_nav.css";
 
-* {
-    color: white;
+html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+    position: relative;
 }
 
-.bg {
-    background: red;
+.nav_btn {
+    font-size: 40px;
+}
+
+.nav {
+    display: none;
+    text-decoration: none;
+    float: left;
+    list-style: none;
+    padding-left: 20px;
+    width: 20%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: red;
+    min-height: 100%;
+}
+
+.nav a {
+    color: white;
+    background-color: #4d4a4a;
+    margin: 2px 0px 2px 0px;
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    float: left;
+    list-style: none;
+}
+
+.content_body {
+    max-width: 75%;
+    float: left;
+    display: inline;
+    padding-left: 50px;
+    height: 100%;
+    width: 100%;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
 }
