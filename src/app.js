@@ -1,12 +1,25 @@
 import ReactDOM from "react-dom";
-import styles from './kek.css';
-import createBarChart from './visualizations/bar-chart';
+import styles from './style.css';
 import mouseAnimation from './visualizations/mouse';
+import Nav from  './components/nav';
+import Link from './components/link';
+
+const navItems = ['Item', 'Item', 'Item', 'Item', 'Item'];
 
 const App = () => {
   return (
     <div className={styles.bg}>
-      Hello world
+      <Nav>
+        {
+          navItems.map((item, index) => {
+            return (
+              <div key={index}>
+                <Link title={item} />
+              </div>
+            )
+          })
+        }
+      </Nav>
     </div>
   );
 };

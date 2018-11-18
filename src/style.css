@@ -1,0 +1,9 @@
+@import "components/nav/_nav.css";
+
+* {
+    color: white;
+}
+
+.bg {
+    background: red;
+}
