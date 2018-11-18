@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './kek.css';
-import mouseAnimation from './visualizations/mouse';
+import viz from './visualizations/array';
 
 const App = () => (
-  <div className={styles.bg}>
+  <div>
     Hello world
   </div>
 );
 
 ReactDOM.render(<App />, document.getElementById('main'));
-mouseAnimation();
+viz(500, 500);
