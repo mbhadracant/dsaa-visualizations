@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import viz from './visualizations/array';
+import Dashboard from './components/Dashboard';
 
 const App = () => (
   <div>
-    Hello world
+    <Dashboard />
   </div>
 );
 
