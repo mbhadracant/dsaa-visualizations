@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
-import viz from './visualizations/array';
 import Dashboard from './components/Dashboard';
+
 
 const theme = createMuiTheme({
   palette: {
@@ -16,7 +16,6 @@ const theme = createMuiTheme({
   },
 });
 
-
 const App = () => (
   <div>
     <MuiThemeProvider theme={theme}>
@@ -26,4 +25,4 @@ const App = () => (
 );
 
 ReactDOM.render(<App />, document.getElementById('main'));
-viz(500, 500);
+console.clear();

@@ -13,7 +13,7 @@ import ListAlt from '@material-ui/icons/ListAlt';
 import CallMerge from '@material-ui/icons/CallMerge';
 
 
-export const mainListItems = (
+export default (
   <div>
     <ListItem button>
       <ListItemIcon>

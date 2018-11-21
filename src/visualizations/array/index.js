@@ -1,11 +1,9 @@
-import * as d3 from 'd3';
 import { createSvg, createBgRect } from '../common';
 
 export default (width, height) => {
-
   const svg = createSvg(width, height);
 
-  const bgRect = createBgRect(svg, width, height);
+  createBgRect(svg, width, height);
 
   const dataset = [1, 2, 3, 4, 5, 7, 8];
   const n = dataset.length;

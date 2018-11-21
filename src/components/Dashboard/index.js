@@ -12,9 +12,8 @@ import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import { mainListItems } from './ListItem';
-
-import dashboardStyles from './Dashboard.css';
+import mainListItems from './ListItem';
+import CodeEditor from '../CodeEditor';
 
 const drawerWidth = 240;
 
@@ -160,8 +159,10 @@ class Dashboard extends React.Component {
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
           <div id="container">
-            <div id="viz"></div>
-            <div id="op"></div>
+            <div id="viz" />
+            <div id="op">
+              <CodeEditor />
+            </div>
           </div>
         </main>
       </div>
