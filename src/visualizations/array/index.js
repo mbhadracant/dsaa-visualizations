@@ -1,20 +1,13 @@
-import * as d3 from 'd3';
+import { createSvg, createBgRect } from '../common';
 
 export default (width, height) => {
-  const svg = d3.select('body')
-    .append('svg')
-    .attr('width', width)
-    .attr('height', height);
+  const svg = createSvg(width, height);
 
-  svg.append('rect')
-    .attr('width', width)
-    .attr('height', height)
-    .attr('fill', 'white')
-    .attr('stroke', 'black');
+  createBgRect(svg, width, height);
 
   const dataset = [1, 2, 3, 4, 5, 7, 8];
   const n = dataset.length;
-  const rectWidth = 50;
+  const rectWidth = n > 10 ? 25 : 50;
   // create rectangles
   svg.selectAll('elements')
     .data(dataset)
@@ -29,7 +22,7 @@ export default (width, height) => {
     .attr('fill', 'white');
 
   // create text labels
-  const texts = svg.selectAll('texts')
+  svg.selectAll('texts')
     .data(dataset)
     .enter()
     .append('text')
@@ -39,14 +32,14 @@ export default (width, height) => {
     .attr('text-anchor', 'middle')
     .text(d => d);
 
-  texts
-    .transition()
-    .duration(100)
-    .delay((d, i) => i * 200)
-    .on('end', function () {
-      d3.select(this)
-        .transition()
-        .delay(2000)
-        .style('fill', 'red');
-    });
+  svg.selectAll('texts')
+    .data(dataset)
+    .enter()
+    .append('text')
+    .attr('x', (d, i) => (i * (width / n)) + (width / n - rectWidth) / 2 + rectWidth / 2)
+    .attr('y', height / 2 + rectWidth + 20)
+    .attr('font-family', 'menlo')
+    .attr('font-size', 10)
+    .attr('text-anchor', 'middle')
+    .text((d, i) => i);
 };
