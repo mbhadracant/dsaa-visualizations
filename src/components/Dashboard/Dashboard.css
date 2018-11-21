@@ -1,0 +1,29 @@
+.container {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.viz {
+    flex: 50%;
+    max-width: 50%;
+    padding: 0 4px;
+}
+
+.side {
+    flex: 50%;
+    max-width: 50%;
+    padding: 0 4px;
+}
+
+@media (max-width: 1200px) {
+    .viz {
+        flex: 100%;
+        max-width: 100%;
+    }
+
+    .side {
+        flex: 100%;
+        max-width: 100%;
+        margin-top:10px;
+    }
+}

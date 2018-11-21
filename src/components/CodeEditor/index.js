@@ -20,14 +20,11 @@ class CodeEditor extends React.Component {
     const { value } = this.state;
 
     const ast = parse(value);
-    let indent = 0;
     traverse(ast, {
       pre: (node) => {
-        console.log(Array(indent + 1).join(' ') + node.type);
-        indent += 4;
+        console.log(node);
       },
       post: () => {
-        indent -= 4;
       },
     });
   }
