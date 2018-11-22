@@ -12,10 +12,16 @@ import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import Button from '@material-ui/core/Button';
+import { connect } from 'react-redux';
+
 import mainListItems from './ListItem';
+
 import CodeEditor from '../CodeEditor';
-import builtInStyles from './styles';
 import styles from './Dashboard.css';
+import builtInStyles from './styles';
+
+import traverse from '../../traverser';
 
 class Dashboard extends React.Component {
   state = {
@@ -31,7 +37,7 @@ class Dashboard extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, editorCode } = this.props;
     const { open } = this.state;
 
     return (
@@ -85,6 +91,9 @@ class Dashboard extends React.Component {
             <div id="viz" className={styles.viz} />
             <div id="side" className={styles.side}>
               <CodeEditor />
+              <Button variant="contained" color="secondary" onClick={() => { traverse(editorCode); }}>
+                Parse
+              </Button>
             </div>
           </div>
         </main>
@@ -93,9 +102,13 @@ class Dashboard extends React.Component {
   }
 }
 
+const mapStateToProps = state => ({
+  editorCode: state.editorCode,
+});
+
 /* eslint-disable react/forbid-prop-types */
 Dashboard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(builtInStyles)(Dashboard);
+export default connect(mapStateToProps)(withStyles(builtInStyles)(Dashboard));
