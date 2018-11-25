@@ -15,7 +15,7 @@ const CodeEditor = ({ editorCode, markers, change }) => (
       fontSize={14}
       showPrintMargin="true"
       showGutter="false"
-      highlightActiveLine="true"
+      highlightActiveLine="false"
       value={editorCode}
       markers={[{ ...markers, className: styles.replacement_marker }]}
       onChange={(code) => {

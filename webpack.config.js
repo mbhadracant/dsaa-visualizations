@@ -15,7 +15,7 @@ module.exports = {
     extensions: ['.js', '.jsx', '.json'],
     symlinks: false
   },
-  entry: "./src/app.js",
+  entry: ["@babel/polyfill", "./src/app.js"],
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, 'dist/')

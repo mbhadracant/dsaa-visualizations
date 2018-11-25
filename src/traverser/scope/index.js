@@ -3,7 +3,7 @@ export default class Scope {
     this.stack = [new Map()];
   }
 
-  createScope() {
+  enterScope() {
     this.stack.push(new Map());
   }
 

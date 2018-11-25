@@ -9,7 +9,6 @@ const highlight = (node) => {
   const startCol = start.column;
   const endCol = end.column;
 
-  console.log(node.loc);
   store.dispatch(highlightEditorCode({
     startRow, startCol, endRow, endCol, type: 'text',
   }));

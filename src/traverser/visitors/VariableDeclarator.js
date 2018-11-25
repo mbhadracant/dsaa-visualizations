@@ -3,11 +3,7 @@ const pre = (node, scope) => {
 };
 
 const post = (node, scope) => {
-  if (node.init.type === 'Literal') {
-    node.value = node.init.value;
-  } else {
-    node.value = node.init.evaluation;
-  }
+  node.value = node.init.value;
   console.log(node.id.name, ' -> ', node.value);
 };
 

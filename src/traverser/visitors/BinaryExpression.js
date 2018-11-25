@@ -1,9 +1,7 @@
-import highlight from '../../highlighter/highlight';
-
 const getValue = (node, scope) => {
   switch (node.type) {
     case 'BinaryExpression':
-      return node.evaluation;
+      return node.value;
     case 'Literal':
       return node.raw;
     case 'Identifier':
@@ -18,12 +16,12 @@ const evaluate = (node, scope) => {
   const leftValue = getValue(left, scope);
   const rightValue = getValue(right, scope);
 
-  node.evaluation = eval(leftValue + operator + rightValue);
+  node.value = eval(leftValue + operator + rightValue);
 };
 
 
-const pre = (node) => {
-  highlight(node);
+const pre = (node, scope) => {
+
 };
 
 const post = (node, scope) => {

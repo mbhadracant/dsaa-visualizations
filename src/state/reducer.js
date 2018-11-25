@@ -4,7 +4,7 @@ const initialState = {
     startRow: 0,
     startCol: 0,
     endRow: 0,
-    endCol: 5,
+    endCol: 0,
     type: 'text',
   },
 };
