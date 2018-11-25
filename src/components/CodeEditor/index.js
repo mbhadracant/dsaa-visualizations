@@ -3,9 +3,10 @@ import AceEditor from 'react-ace';
 import 'brace/mode/javascript';
 import 'brace/theme/dracula';
 import { connect } from 'react-redux';
-import changeEditorCode from '../../state/action';
+import { changeEditorCode } from '../../state/action';
+import styles from './CodeEditor.css';
 
-const CodeEditor = ({ editorCode, change }) => (
+const CodeEditor = ({ editorCode, markers, change }) => (
   <div>
     <AceEditor
       mode="javascript"
@@ -16,6 +17,7 @@ const CodeEditor = ({ editorCode, change }) => (
       showGutter="false"
       highlightActiveLine="true"
       value={editorCode}
+      markers={[{ ...markers, className: styles.replacement_marker }]}
       onChange={(code) => {
         change(code);
       }}
@@ -32,6 +34,7 @@ const CodeEditor = ({ editorCode, change }) => (
 
 const mapStateToProps = state => ({
   editorCode: state.editorCode,
+  markers: state.markers,
 });
 
 const mapDispatchToProps = {
