@@ -1,10 +1,9 @@
-const pre = (node) => {
+const pre = (node, scope) => {
 
 };
 
-const post = (node) => {
+const post = (node, scope) => {
 
 };
-
 
 export default { pre, post };

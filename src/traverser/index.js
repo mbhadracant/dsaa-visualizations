@@ -21,9 +21,9 @@ const scope = new Scope();
 
 export default (code) => {
   const ast = parse(code, { loc: true });
+  console.log(ast);
   traverse(ast, {
     pre: (node) => {
-      console.log(node);
       if (node.type in map) {
         map[node.type].pre(node, scope);
       }

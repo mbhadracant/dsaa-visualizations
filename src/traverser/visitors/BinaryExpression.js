@@ -1,3 +1,5 @@
+import highlight from '../../highlighter/highlight';
+
 const getValue = (node, scope) => {
   switch (node.type) {
     case 'BinaryExpression':
@@ -21,7 +23,7 @@ const evaluate = (node, scope) => {
 
 
 const pre = (node) => {
-
+  highlight(node);
 };
 
 const post = (node, scope) => {
