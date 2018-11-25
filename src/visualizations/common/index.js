@@ -3,6 +3,7 @@ import * as d3 from 'd3';
 const createSvg = (width, height) => (
   d3.select('#viz')
     .append('svg')
+    .attr('id', 'svg-viz')
     .attr('width', width)
     .attr('height', height)
     .style('box-shadow', '0px 0px 10px rgb(245,245,245)')

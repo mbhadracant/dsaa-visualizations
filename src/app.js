@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { Provider } from 'react-redux';
-import array from './visualizations/array';
 import Dashboard from './components/Dashboard';
 import store from './state/store';
+import { createSvg, createBgRect } from './visualizations/common';
 
 const theme = createMuiTheme({
   palette: {
@@ -29,4 +29,5 @@ const App = () => (
 
 ReactDOM.render(<App />, document.getElementById('main'));
 console.clear();
-array(500, 500);
+const svg = createSvg(500, 500);
+createBgRect(svg, 500, 500);
