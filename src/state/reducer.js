@@ -1,5 +1,5 @@
 const initialState = {
-  editorCode: 'const x = 5;',
+  editorCode: 'const x = 5 * 6 * 7 * 8;',
 };
 
 export default (state = initialState, action) => {
