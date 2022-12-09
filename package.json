@@ -22,7 +22,7 @@
     "classnames": "^2.2.6",
     "d3": "^5.7.0",
     "esprima": "^4.0.1",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "prop-types": "latest",
     "react": "^16.6.3",
     "react-ace": "^6.2.0",
